@@ -892,7 +892,7 @@ type OpenApiGroup struct {
 	ID string `json:"id,omitempty"`
 	// Name of the group
 	Name string `json:"name"`
-	// Name of the group in its source
+	// Name of the group in its source. This is computed by the server on create.
 	NameInSource string `json:"nameInSource,omitempty"`
 	// Description of the group
 	Description string `json:"description,omitempty"`
