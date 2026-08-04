@@ -733,6 +733,23 @@ type TmRegionalNetworkingSetting struct {
 	Status string `json:"status,omitempty"`
 }
 
+// TmRegionalNetworkingAviSetting represents the Avi load balancer configuration for an
+// Organization Regional Networking Setting.
+type TmRegionalNetworkingAviSetting struct {
+	// Active controls whether Avi integration is enabled for the Organization and Region.
+	Active bool `json:"active"`
+	// ServiceEngineGroupMode controls whether service engine groups are managed by the tenant or provider.
+	ServiceEngineGroupMode *string `json:"serviceEngineGroupMode"`
+	// ServiceEngineGroupRefs identifies provider-managed service engine groups.
+	ServiceEngineGroupRefs []OpenApiReference `json:"serviceEngineGroupRefs"`
+	// ServiceEngineQuota is the total service engine capacity available to the tenant.
+	ServiceEngineQuota *int `json:"serviceEngineQuota"`
+	// ApplicationLimit is the maximum number of applications available to the tenant.
+	ApplicationLimit *int `json:"applicationLimit"`
+	// Status is the read-only realization status returned by VCFA.
+	Status *string `json:"status,omitempty"`
+}
+
 // VpcConnectivityProfileQosConfig is a type alias for TmEdgeClusterDefaultQosConfig
 //
 // Note. The structures are identical at the moment, but they are used in different endpoints and

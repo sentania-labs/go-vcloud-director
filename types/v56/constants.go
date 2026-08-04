@@ -550,6 +550,7 @@ const (
 	OpenApiEndpointTmEdgeClusterTransportNodeStatus       = "edgeClusters/%s/transportNodesStatus"
 	OpenApiEndpointTmEdgeClustersSync                     = "edgeClusters/sync"
 	OpenApiEndpointTmRegionalNetworkingSettings           = "regionalNetworkingSettings/"
+	OpenApiEndpointTmRegionalNetworkingSettingsAviSetting = "regionalNetworkingSettings/%s/aviSetting"
 	OpenApiEndpointTmRegionalNetworkingSettingsVpcProfile = "regionalNetworkingSettings/%s/defaultVpcConnectivityProfile"
 	OpenApiEndpointTmSharedSubnets                        = "sharedSubnets/"
 	OpenApiEndpointTmDistributedVlanConnections           = "distributedVlanConnections/"

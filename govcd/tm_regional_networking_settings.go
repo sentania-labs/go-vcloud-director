@@ -12,6 +12,7 @@ import (
 )
 
 const labelTmRegionalNetworkingSetting = "Regional Networking Setting"
+const labelTmRegionalNetworkingAviSetting = "Regional Networking Avi Setting"
 const labelTmRegionalNetworkingVpcConnectivityProfile = "Regional Networking VPC Connectivity Profile"
 
 type TmRegionalNetworkingSetting struct {
@@ -174,4 +175,26 @@ func (o *TmRegionalNetworkingSetting) UpdateDefaultVpcConnectivityProfile(regNet
 		requiresTm:     true,
 	}
 	return updateInnerEntity(&o.vcdClient.Client, c, regNetVpcProfileConfig)
+}
+
+// GetAviSetting retrieves Avi configuration for Org Regional Networking
+func (o *TmRegionalNetworkingSetting) GetAviSetting() (*types.TmRegionalNetworkingAviSetting, error) {
+	c := crudConfig{
+		entityLabel:    labelTmRegionalNetworkingAviSetting,
+		endpoint:       types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsAviSetting,
+		endpointParams: []string{o.TmRegionalNetworkingSetting.ID},
+		requiresTm:     true,
+	}
+	return getInnerEntity[types.TmRegionalNetworkingAviSetting](&o.vcdClient.Client, c)
+}
+
+// UpdateAviSetting changes Avi configuration for Org Regional Networking
+func (o *TmRegionalNetworkingSetting) UpdateAviSetting(regNetAviSettingConfig *types.TmRegionalNetworkingAviSetting) (*types.TmRegionalNetworkingAviSetting, error) {
+	c := crudConfig{
+		entityLabel:    labelTmRegionalNetworkingAviSetting,
+		endpoint:       types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsAviSetting,
+		endpointParams: []string{o.TmRegionalNetworkingSetting.ID},
+		requiresTm:     true,
+	}
+	return updateInnerEntity(&o.vcdClient.Client, c, regNetAviSettingConfig)
 }
