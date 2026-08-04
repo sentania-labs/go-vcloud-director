@@ -739,11 +739,11 @@ type TmRegionalNetworkingAviSetting struct {
 	// Active controls whether Avi integration is enabled for the Organization and Region.
 	Active bool `json:"active"`
 	// ServiceEngineGroupMode controls whether service engine groups are managed by the tenant or provider.
-	ServiceEngineGroupMode *string `json:"serviceEngineGroupMode"`
+	ServiceEngineGroupMode string `json:"serviceEngineGroupMode,omitempty"`
 	// ServiceEngineGroupRefs identifies provider-managed service engine groups.
 	ServiceEngineGroupRefs []OpenApiReference `json:"serviceEngineGroupRefs"`
 	// ServiceEngineQuota is the total service engine capacity available to the tenant.
-	ServiceEngineQuota *int `json:"serviceEngineQuota"`
+	ServiceEngineQuota int `json:"serviceEngineQuota,omitempty"`
 	// ApplicationLimit is the maximum number of applications available to the tenant.
 	ApplicationLimit *int `json:"applicationLimit"`
 	// Status is the read-only realization status returned by VCFA.
