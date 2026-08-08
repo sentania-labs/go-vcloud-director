@@ -887,6 +887,25 @@ type NsxtManagerOpenApi struct {
 	Status string `json:"status,omitempty"`
 }
 
+// OpenApiGroup defines structure for Group management using OpenAPI based endpoint
+type OpenApiGroup struct {
+	ID string `json:"id,omitempty"`
+	// Name of the group
+	Name string `json:"name"`
+	// Name of the group in its source. This is computed by the server on create.
+	NameInSource string `json:"nameInSource,omitempty"`
+	// Description of the group
+	Description string `json:"description,omitempty"`
+	// Provider type of the group. It must be one of: LDAP, SAML, OAUTH
+	ProviderType string `json:"providerType,omitempty"`
+	// Organization containing the group
+	OrgEntityRef *OpenApiReference `json:"orgEntityRef,omitempty"`
+	// The directly assigned roles of the group
+	RoleEntityRefs []OpenApiReference `json:"roleEntityRefs,omitempty"`
+	// Identity source containing the group
+	SourceEntityRef *OpenApiReference `json:"sourceEntityRef,omitempty"`
+}
+
 // OpenApiUser defines structure for User management using OpenAPI based endpoint
 type OpenApiUser struct {
 	ID string `json:"id,omitempty"`
