@@ -182,6 +182,7 @@ var endpointMinApiVersions = map[string]string{
 	types.OpenApiPathVersion1_0_0 + types.OpenApiEndpointTmOrgNetworkingSettings:       "40.0",
 	types.OpenApiPathVcf + types.OpenApiEndpointTmOrgSettings:                          "40.0",
 	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettings:           "40.0",
+	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsAviSetting: "40.0",
 	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsVpcProfile: "40.0",
 	types.OpenApiPathVersion1_0_0 + types.OpenApiEndpointFeatureFlags:                  "40.0",
 	types.OpenApiPathVcf + types.OpenApiEndpointTmSharedSubnets:                        "40.1",
@@ -286,6 +287,9 @@ var endpointElevatedApiVersions = map[string][]string{
 	},
 	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettings: {
 		"40.1", // TM Regional Networking Settings
+	},
+	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsAviSetting: {
+		"40.1", // TM Regional Networking Avi Setting
 	},
 	types.OpenApiPathVcf + types.OpenApiEndpointTmRegionalNetworkingSettingsVpcProfile: {
 		"40.1", // TM Regional Networking VPC Connectivity Profile
